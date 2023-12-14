@@ -28,7 +28,7 @@ body::before {
 
 .container {
     width: 80%;
-    height: 80%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -51,6 +51,9 @@ body::before {
 .container__informacoes {
     flex: 1;
     padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 }
 
 .container__botao {
@@ -66,6 +69,10 @@ body::before {
 
 .container__texto {
     margin: 16px 0 16px 0;
+}
+
+.titulo-jogo {
+    font-size: 3rem;
 }
 
 .container__texto-azul {
@@ -93,7 +100,6 @@ body::before {
 h1 {
     font-family: 'Chakra Petch', sans-serif;
     font-size: 72px;
-    padding-bottom: 3rem;
 }
 
 p,
@@ -102,7 +108,7 @@ button {
 }
 
 .texto__paragrafo {
-    font-size: 32px;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 
