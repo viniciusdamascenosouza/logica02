@@ -1,7 +1,6 @@
 let numeroSecreto = gerarNumeroAleatorio();
 
 const botaoChutar = document.querySelector(".botao-chutar");
-
 const numeroMenor = 1;
 const numeroMaior = 10;
 
