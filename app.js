@@ -10,6 +10,8 @@ const numeroMaior = 20;
 function exibirTextoNaTela(classHtml, texto) {
   let campo = document.querySelector(classHtml);
   campo.innerHTML = texto;
+
+  responsiveVoice.speak(texto, "Brazilian Portuguese Female", { rate: 1.2 });
 }
 
 exibirTextoNaTela(".titulo-jogo", "Jogo do número secreto");
