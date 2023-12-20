@@ -17,7 +17,14 @@ exibirTextoNaTela(
 
 function verificarChute() {
   let chute = document.querySelector(".container__input").value;
-  console.log(chute == numeroSecreto);
+
+  if(chute == numeroSecreto) {
+    exibirTextoNaTela('p', `Você acertou! O número secreto é ${numeroSecreto}.`)
+  } else if(chute > numeroSecreto){
+    exibirTextoNaTela('p', `O número secreto é menor que ${chute}.`)
+  } else {
+    exibirTextoNaTela('p', `O número secreto é maior que ${chute}.`)
+  }
 }
 
 botaoChutar.addEventListener("click", () => {
