@@ -1,4 +1,4 @@
-let numeroSecreto = gerarNumeroAleatorio();
+let numeroSecreto = 5;
 
 const botaoChutar = document.querySelector(".botao-chutar");
 const numeroMenor = 1;
@@ -16,7 +16,8 @@ exibirTextoNaTela(
 );
 
 function verificarChute() {
-  console.log(numeroSecreto);
+  let chute = document.querySelector(".container__input").value;
+  console.log(chute == numeroSecreto);
 }
 
 botaoChutar.addEventListener("click", () => {
