@@ -1,4 +1,5 @@
-let numeroSecreto = 5;
+let numeroSecreto = gerarNumeroAleatorio();
+let tentativas = 1;
 
 const botaoChutar = document.querySelector(".botao-chutar");
 const numeroMenor = 1;
@@ -17,14 +18,17 @@ exibirTextoNaTela(
 
 function verificarChute() {
   let chute = document.querySelector(".container__input").value;
+  let palavraTentativas = tentativas > 1 ? "tentativas" : "tentativa";
+  let mensagemTentativas = `Parabéns! Você descobriu o número secreto: ${numeroSecreto}, com ${tentativas} ${palavraTentativas}!`;
 
-  if(chute == numeroSecreto) {
-    exibirTextoNaTela('p', `Você acertou! O número secreto é ${numeroSecreto}.`)
-  } else if(chute > numeroSecreto){
-    exibirTextoNaTela('p', `O número secreto é menor que ${chute}.`)
+  if (chute == numeroSecreto) {
+    exibirTextoNaTela("p", mensagemTentativas);
+  } else if (chute > numeroSecreto) {
+    exibirTextoNaTela("p", `O número secreto é menor que ${chute}.`);
   } else {
-    exibirTextoNaTela('p', `O número secreto é maior que ${chute}.`)
+    exibirTextoNaTela("p", `O número secreto é maior que ${chute}.`);
   }
+  tentativas++;
 }
 
 botaoChutar.addEventListener("click", () => {
