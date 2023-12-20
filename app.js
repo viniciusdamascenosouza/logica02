@@ -1,9 +1,11 @@
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
 
-const botaoChutar = document.querySelector(".botao-chutar");
+const botaoChutar = document.querySelector(".botao__chutar");
+const botaoLimpar = document.getElementById("reiniciar");
+
 const numeroMenor = 1;
-const numeroMaior = 10;
+const numeroMaior = 20;
 
 function exibirTextoNaTela(classHtml, texto) {
   let campo = document.querySelector(classHtml);
@@ -23,12 +25,15 @@ function verificarChute() {
 
   if (chute == numeroSecreto) {
     exibirTextoNaTela("p", mensagemTentativas);
+
+    botaoLimpar.removeAttribute("disabled");
   } else if (chute > numeroSecreto) {
     exibirTextoNaTela("p", `O número secreto é menor que ${chute}.`);
   } else {
     exibirTextoNaTela("p", `O número secreto é maior que ${chute}.`);
   }
   tentativas++;
+  limparCampo();
 }
 
 botaoChutar.addEventListener("click", () => {
@@ -36,5 +41,14 @@ botaoChutar.addEventListener("click", () => {
 });
 
 function gerarNumeroAleatorio() {
-  return parseInt(Math.random() * 10 + 1);
+  return parseInt(Math.random() * 20 + 1);
+}
+
+function limparCampo() {
+  chute = document.querySelector("input");
+  chute.value = "";
+}
+
+function reiniciarJogo() {
+  window.location.reload();
 }
